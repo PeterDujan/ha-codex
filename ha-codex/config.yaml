@@ -1,0 +1,57 @@
+name: HA Codex
+description: Run Codex inside Home Assistant to create automations, debug issues, and manage your smart home configuration
+version: "1.0.0"
+slug: ha-codex
+url: https://github.com/PeterDujan/ha-codex
+arch:
+  - amd64
+  - aarch64
+  - armv7
+  - armhf
+  - i386
+startup: application
+boot: auto
+init: true
+ingress: true
+ingress_port: 7681
+ingress_stream: true
+panel_icon: mdi:robot
+panel_title: Codex
+homeassistant_api: true
+auth_api: true
+hassio_api: true
+hassio_role: manager
+uart: true
+docker_api: true
+full_access: true
+map:
+  - homeassistant_config:rw
+  - ssl:ro
+  - share:rw
+  - media:rw
+  - addon_config:rw
+  - backup:ro
+options:
+  enable_mcp: true
+  terminal_font_size: 14
+  terminal_theme: dark
+  working_directory: /homeassistant
+  session_persistence: true
+  auto_update_codex: false
+  codex_model: gpt-5.4
+  codex_reasoning_effort: high
+  codex_approval_policy: on-request
+  codex_sandbox_mode: workspace-write
+schema:
+  enable_mcp: bool
+  terminal_font_size: int(10,24)
+  terminal_theme: list(dark|light)
+  working_directory: str
+  session_persistence: bool
+  auto_update_codex: bool
+  codex_model: str
+  codex_reasoning_effort: list(minimal|low|medium|high|xhigh)
+  codex_approval_policy: list(untrusted|on-request|never)
+  codex_sandbox_mode: list(read-only|workspace-write|danger-full-access)
+environment:
+  TERM: xterm-256color

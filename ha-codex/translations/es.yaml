@@ -1,0 +1,47 @@
+configuration:
+  enable_mcp:
+    name: Habilitar MCP de Home Assistant
+    description: >-
+      Habilita el servidor MCP de Home Assistant para interacción directa con
+      entidades y servicios desde Codex.
+  terminal_font_size:
+    name: Tamaño de Fuente del Terminal
+    description: >-
+      Tamaño de fuente del terminal web en píxeles (10-24).
+  terminal_theme:
+    name: Tema del Terminal
+    description: >-
+      Tema de colores del terminal web.
+  working_directory:
+    name: Directorio de Trabajo
+    description: >-
+      El directorio predeterminado cuando Codex inicia.
+  session_persistence:
+    name: Persistencia de Sesión
+    description: >-
+      Habilita persistencia de sesión con tmux para sobrevivir actualizaciones
+      del navegador y desconexiones.
+  auto_update_codex:
+    name: Actualización Automática de Codex
+    description: >-
+      Verifica e instala automáticamente actualizaciones de Codex CLI al iniciar el add-on.
+      Deshabilitado por defecto para compilaciones reproducibles.
+  codex_model:
+    name: Modelo de Codex
+    description: >-
+      Modelo predeterminado para Codex en la configuración administrada.
+  codex_reasoning_effort:
+    name: Esfuerzo de Razonamiento de Codex
+    description: >-
+      Esfuerzo de razonamiento predeterminado para modelos Codex compatibles.
+  codex_approval_policy:
+    name: Política de Aprobación de Codex
+    description: >-
+      Controla cuándo Codex pregunta antes de ejecutar comandos o cambiar archivos.
+  codex_sandbox_mode:
+    name: Modo Sandbox de Codex
+    description: >-
+      Modo sandbox del sistema de archivos usado por Codex al ejecutar comandos.
+
+network:
+  7681/tcp: Terminal Web (ttyd)

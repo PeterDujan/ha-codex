@@ -1,0 +1,47 @@
+configuration:
+  enable_mcp:
+    name: Enable Home Assistant MCP
+    description: >-
+      Enable the Home Assistant MCP server for direct entity and service
+      interaction from Codex.
+  terminal_font_size:
+    name: Terminal Font Size
+    description: >-
+      Font size for the web terminal in pixels (10-24).
+  terminal_theme:
+    name: Terminal Theme
+    description: >-
+      Color theme for the web terminal.
+  working_directory:
+    name: Working Directory
+    description: >-
+      The default working directory when Codex starts.
+  session_persistence:
+    name: Session Persistence
+    description: >-
+      Enable tmux session persistence so the terminal survives browser refreshes
+      and disconnects.
+  auto_update_codex:
+    name: Auto-update Codex
+    description: >-
+      Automatically check for and install Codex CLI updates on add-on startup.
+      Disabled by default for reproducible builds.
+  codex_model:
+    name: Codex Model
+    description: >-
+      Default model passed to Codex through its managed configuration.
+  codex_reasoning_effort:
+    name: Codex Reasoning Effort
+    description: >-
+      Default reasoning effort for supported Codex models.
+  codex_approval_policy:
+    name: Codex Approval Policy
+    description: >-
+      Controls when Codex asks before executing commands or changing files.
+  codex_sandbox_mode:
+    name: Codex Sandbox Mode
+    description: >-
+      Filesystem sandbox mode used by Codex when executing commands.
+
+network:
+  7681/tcp: Web Terminal (ttyd)
